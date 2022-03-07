@@ -19,4 +19,19 @@ public class MoodAnalyserTest {
         Assert.assertEquals("HAPPY",mood);
     }
 
+    // passing parameter through constructor
+    @Test
+    public void givenMessage_WhenProper_ShouldReturnSad() {
+        MoodAnalyser moodanalyser = new MoodAnalyser("I am in Sad mood");
+        String mood = moodanalyser.analyseMood();
+        Assert.assertEquals("SAD", mood);
+    }
+
+    @Test
+    public void givenMessage_WhenProper_ShouldReturnHappy() {
+        MoodAnalyser moodanalyser = new MoodAnalyser("I am in happy mood");
+        String mood = moodanalyser.analyseMood();
+        Assert.assertEquals("HAPPY", mood);
+    }
+
 }
