@@ -18,10 +18,14 @@ public class MoodAnalyser {
         this.message = message;
         return analyseMood();
     }
-    public static String analyseMood() {   // Analysing mood using method analyse mood with parameter passed
-        if (message.toLowerCase().contains("sad"))
-            return "SAD";
-        else
+    public String analyseMood() {   // Analysing mood using method analyse mood with parameter passed
+        try {
+            if (message.toLowerCase().contains("sad"))
+                return "SAD";
+            else
+                return "HAPPY";
+        } catch (NullPointerException e) {
             return "HAPPY";
+        }
     }
 }
